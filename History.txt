@@ -1,0 +1,938 @@
+    1  $shell
+    2  SHELL
+    3  pwd
+    4  echo $shell
+    5  echo $SHELL
+    6  ping google.de
+    7  echo $SHELL
+    8  whi iam
+    9  whiiam
+   10  echo $USER
+   11  ssh ec2-user
+   12  git --version
+   13  mkdir repository
+   14  pwd
+   15  ls
+   16  cd repository/
+   17  cd..
+   18  ls -lah
+   19  cd ..
+   20  ls -lah
+   21  cd repository/
+   22  touch index.html
+   23  touch style.css
+   24  touch backend.py
+   25  mkdir Bilder
+   26  cd Bilder/
+   27  touch Bild1.jpg Bild2.jpg
+   28   touch Bildx.png
+   29   touch Bild1.png
+   30  cd..
+   31  cd ..
+   32  mkdir Secrets
+   33  touch .gitignore
+   34  pwd
+   35  itory
+   36  hitory
+   37  history
+   38  clear
+   39  git config --global user.name "Mike.Berndt""
+   40  git config --global user.name "Mike.Berndt"
+   41  git config --global user.Mail "Mike-Berndt@web.de"
+   42  git config --global user.email "Mike-Berndt@web.de"
+   43  git config --global color.ui auto
+   44  ls -lah
+   45  git init
+   46  ls -lah
+   47  git status
+   48  git add -A
+   49  git status 
+   50  chmod 764 index.html
+   51  ls -lah
+   52  chmod 664 index.html
+   53  chmod 764 backend.py
+   54  ls -lah
+   55  sudo yum update
+   56  git status
+   57  git add backend.py
+   58  git status
+   59  git commit -m "mein erstes Commit + Permission file in backend.py geändert"
+   60  git status 
+   61  ls -lsh
+   62  cd repository/
+   63  ls -lsh
+   64  cd ..
+   65  ls -lsh
+   66  ls-l
+   67  ls
+   68  git clone [08:43] Renato Palavecino
+   69  https://github.com/ingeniebrio77/AWS-CLI
+   70   like 1
+   71  GitHub - ingeniebrio77/AWS-CLI: README for AWS-CLI
+   72  README for AWS-CLI. Contribute to ingeniebrio77/AWS-CLI development by creating an account on GitHub.
+   73  git clone https://github.com/ingeniebrio77/AWS-CLI
+   74  ls -lsh
+   75  cd AWS-CLI/
+   76  git ceckout master
+   77  git checkout master
+   78  git branch 
+   79  git branch
+   80  cd ..
+   81  cd..
+   82  ls -l
+   83  mkdir vsCode
+   84  cd vsCode/
+   85  git clone https://github.com/microsoft/vscode.git
+   86  ls -l
+   87  cd ..
+   88  cd AWS-CLI/
+   89  cd .. 
+   90  mkdir AwsGit
+   91  cd AwsGit/
+   92  touch index.html style.css backend.py
+   93  mkdir Bilder
+   94  touch Bilder/Bild1.png Bild2.png
+   95  ls Bilder/
+   96  touch Bilder/Bild1.jpg
+   97  touch Bilder/Bild2.jpg
+   98  ls Bilder/
+   99  touch Bilder/Bild2.ong
+  100  touch Bilder/Bild2.png
+  101  rm Bilder/Bilder2.ong
+  102  ls Bilder/
+  103  rm Bilder/Bild2.ong
+  104  ls Bilder/
+  105  touch Beispiel1.txt Beispiel2.txt
+  106  cat Besipiel1.txt
+  107  cat Beispiel1.txt
+  108  rm Beispiel1.txt Beispiel2.txt
+  109  mkdir Beispiel1
+  110  mkdir Beispiel2
+  111  mkdir /Bilder2/Bilder3
+  112  mkdir Bilder2/Bilder3
+  113  mkdir Beispiel2/Beispiel3
+  114  touch Beispiel2/Beispiel3/Mike.txt
+  115  cd Beispiel2/Beispiel3/
+  116  ls -l
+  117  cd .. 
+  118  cd ..
+  119  rmdir Beispiel1
+  120  rmdir Beispiel2
+  121  rmdir -r -f Beispiel2
+  122  rmdir -rf Beispiel2
+  123  rmdir -r Beispiel2
+  124  man rm 
+  125  rm -rf Beispiel2
+  126  mkdir secrets
+  127  cd secrets/
+  128  cd.. 
+  129  cd .. 
+  130  touch .gitignore
+  131  cat .gitignore 
+  132  git config --global user.name "Mike Berndt"
+  133  git config --global user.email "Mike-Berndt@web.de"
+  134  touch history.txt
+  135  history >> history.txt
+  136  git init
+  137  git status
+  138  git add -A
+  139  git commit -m "erstes commit"
+  140  git status
+  141  git log 
+  142  git branch beta
+  143  git branch 
+  144  git checkout beta
+  145  git status
+  146  git add -A
+  147  git status
+  148  git commit -m "Überschrift index.html hinzugefügt"
+  149  git log 
+  150  git checkout master
+  151  git log 
+  152  cat index.html
+  153  git branch beta-test
+  154  git branch
+  155  git checkout beta-test 
+  156  git add -A
+  157  git commit -m "backend.py Programmcode hinzugefügt"
+  158  git status 
+  159  git log 
+  160  git status 
+  161  git add -A
+  162  git commit -m "backend.py Programmcode hinzugefügt"
+  163  git log 
+  164  git status 
+  165  git commit -a -m "backend.py Programmcode geändert"
+  166  git status 
+  167  git log 
+  168  git merge beta 
+  169  cat index.html
+  170  git checkout master
+  171  git megre beta-test
+  172  cat index.html
+  173  git merge beta-test
+  174  cat index.html
+  175  git log
+  176  Sudo yum install jq
+  177  sudo yum install jq
+  178  git init
+  179  sudo yum install jq
+  180  aws ec2 describe-instances | jq -r '.Reservations[].Instances[]|.InstanceId+" "+.InstanceType+" "+(.Tags[] | select(.Key == "Name").Value)'
+  181  aws ec2 describe-instances --query 'Reservations[*].Instances[?not_null(PublicIpAddress)]' | jq -r '.[][]|.PublicIpAddress+" "+(.Tags[]|select(.Key=="Name").Value)'
+  182  223.64.72.64    fisher.com
+  183  198.82.207.161  robinson.com
+  184  182.139.20.233  nolan.com
+  185  ip a
+  186  sudo  systemctl status httpd
+  187  sudo  systemctl httpd start
+  188  sudo  systemctl start  httpd
+  189  mkdir CloudFormation
+  190  cd CloudFormation/
+  191  touch README.md
+  192  ls -l
+  193  cd --
+  194  cd ..
+  195  ls -l
+  196  cd  ec2-user/
+  197   ls 
+  198  cd environment/
+  199  ls -l
+  200  cd CloudFormation/
+  201  git config --global  user.name "Mike Berndt"
+  202  git config --global  user.email "Mike-Berndt@web.de"
+  203  git init
+  204  git status
+  205  git add -a
+  206  git add -A
+  207  git commit -m "Initialiesierung  der CloudFormation Readme.md"
+  208  cd ..
+  209  ls -l
+  210  ls -lah
+  211  cd .. 
+  212  ls -lah 
+  213  nano bashrc
+  214  nano .bashrc 
+  215  alias gitname-git config --global user.name "Mike Berndt"
+  216  alias gitname='git config --global user.name "Mike Berndt"'
+  217  nano .bashrc 
+  218  ls 
+  219  cd environment/
+  220  cd CloudFormation/
+  221  touch muster-ec2.yml
+  222  touch muster-ec2.yaml
+  223  git remote add origin https://github.com/6543210meins/AWS_Doc
+  224  git add -A 
+  225  git Status
+  226  git commit -m "Hinzufügen der CloudFormation"
+  227  cd ..
+  228  cd..
+  229  cd ..
+  230  ssh-keygen
+  231  ls -l
+  232  ls -lah
+  233  sudo systemctl enable ssh
+  234  sudo systemctl status  ssh
+  235  sudo systemctl status ssh
+  236  ls -lah .ssh
+  237  ssh-keygen
+  238  ls -lah .ssh
+  239  cat .ssh/id_rsa.pub
+  240  ssh -T git@github.com
+  241  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  242  cd environment/
+  243  cd CloudFormation/
+  244  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  245  git push -u origin main
+  246  git push -u origin master
+  247  history
+  248  cd..
+  249  cd ..
+  250  ls -lah
+  251  cd environment/
+  252  ls -lah
+  253  rm -rf .git
+  254  cd CloudFormation/
+  255  touch Readme.txt
+  256  alias gitname='git config --global user.name "Mike Berndt"'
+  257  git config --global  user.email "Mike-Berndt@web.de"
+  258  git init
+  259  git add -A
+  260  git commit -m "Hinzufügen von CloudFormation "
+  261  git push -u origin master
+  262  ssh -T git@github.com
+  263  git remote add origin     1  $shell
+  264      2  SHELL
+  265      3  pwd
+  266      4  echo $shell
+  267      5  echo $SHELL
+  268      6  ping google.de
+  269      7  echo $SHELL
+  270      8  whi iam
+  271      9  whiiam
+  272     10  echo $USER
+  273     11  ssh ec2-user
+  274     12  git --version
+  275     13  mkdir repository
+  276     14  pwd
+  277     15  ls
+  278     16  cd repository/
+  279     17  cd..
+  280     18  ls -lah
+  281     19  cd ..
+  282     20  ls -lah
+  283     21  cd repository/
+  284     22  touch index.html
+  285     23  touch style.css
+  286     24  touch backend.py
+  287     25  mkdir Bilder
+  288     26  cd Bilder/
+  289     27  touch Bild1.jpg Bild2.jpg
+  290     28   touch Bildx.png
+  291     29   touch Bild1.png
+  292     30  cd..
+  293     31  cd ..
+  294     32  mkdir Secrets
+  295     33  touch .gitignore
+  296     34  pwd
+  297     35  itory
+  298     36  hitory
+  299     37  history
+  300     38  clear
+  301     39  git config --global user.name "Mike.Berndt""
+  302     40  git config --global user.name "Mike.Berndt"
+  303     41  git config --global user.Mail "Mike-Berndt@web.de"
+  304     42  git config --global user.email "Mike-Berndt@web.de"
+  305     43  git config --global color.ui auto
+  306     44  ls -lah
+  307     45  git init
+  308     46  ls -lah
+  309     47  git status
+  310     48  git add -A
+  311     49  git status 
+  312     50  chmod 764 index.html
+  313     51  ls -lah
+  314     52  chmod 664 index.html
+  315     53  chmod 764 backend.py
+  316     54  ls -lah
+  317     55  sudo yum update
+  318     56  git status
+  319     57  git add backend.py
+  320     58  git status
+  321     59  git commit -m "mein erstes Commit + Permission file in backend.py geändert"
+  322     60  git status 
+  323     61  ls -lsh
+  324     62  cd repository/
+  325     63  ls -lsh
+  326     64  cd ..
+  327     65  ls -lsh
+  328     66  ls-l
+  329     67  ls
+  330     68  git clone [08:43] Renato Palavecino
+  331     69  https://github.com/ingeniebrio77/AWS-CLI
+  332     70   like 1
+  333     71  GitHub - ingeniebrio77/AWS-CLI: README for AWS-CLI
+  334     72  README for AWS-CLI. Contribute to ingeniebrio77/AWS-CLI development by creating an account on GitHub.
+  335     73  git clone https://github.com/ingeniebrio77/AWS-CLI
+  336     74  ls -lsh
+  337     75  cd AWS-CLI/
+  338     76  git ceckout master
+  339     77  git checkout master
+  340     78  git branch 
+  341     79  git branch
+  342     80  cd ..
+  343     81  cd..
+  344     82  ls -l
+  345     83  mkdir vsCode
+  346     84  cd vsCode/
+  347     85  git clone https://github.com/microsoft/vscode.git
+  348     86  ls -l
+  349     87  cd ..
+  350     88  cd AWS-CLI/
+  351     89  cd .. 
+  352     90  mkdir AwsGit
+  353     91  cd AwsGit/
+  354     92  touch index.html style.css backend.py
+  355     93  mkdir Bilder
+  356     94  touch Bilder/Bild1.png Bild2.png
+  357     95  ls Bilder/
+  358     96  touch Bilder/Bild1.jpg
+  359     97  touch Bilder/Bild2.jpg
+  360     98  ls Bilder/
+  361     99  touch Bilder/Bild2.ong
+  362    100  touch Bilder/Bild2.png
+  363    101  rm Bilder/Bilder2.ong
+  364    102  ls Bilder/
+  365    103  rm Bilder/Bild2.ong
+  366    104  ls Bilder/
+  367    105  touch Beispiel1.txt Beispiel2.txt
+  368    106  cat Besipiel1.txt
+  369    107  cat Beispiel1.txt
+  370    108  rm Beispiel1.txt Beispiel2.txt
+  371    109  mkdir Beispiel1
+  372    110  mkdir Beispiel2
+  373    111  mkdir /Bilder2/Bilder3
+  374    112  mkdir Bilder2/Bilder3
+  375    113  mkdir Beispiel2/Beispiel3
+  376    114  touch Beispiel2/Beispiel3/Mike.txt
+  377    115  cd Beispiel2/Beispiel3/
+  378    116  ls -l
+  379    117  cd .. 
+  380    118  cd ..
+  381    119  rmdir Beispiel1
+  382    120  rmdir Beispiel2
+  383    121  rmdir -r -f Beispiel2
+  384    122  rmdir -rf Beispiel2
+  385    123  rmdir -r Beispiel2
+  386    124  man rm 
+  387    125  rm -rf Beispiel2
+  388    126  mkdir secrets
+  389    127  cd secrets/
+  390    128  cd.. 
+  391    129  cd .. 
+  392    130  touch .gitignore
+  393    131  cat .gitignore 
+  394    132  git config --global user.name "Mike Berndt"
+  395    133  git config --global user.email "Mike-Berndt@web.de"
+  396    134  touch history.txt
+  397    135  history >> history.txt
+  398    136  git init
+  399    137  git status
+  400    138  git add -A
+  401    139  git commit -m "erstes commit"
+  402    140  git status
+  403    141  git log 
+  404    142  git branch beta
+  405    143  git branch 
+  406    144  git checkout beta
+  407    145  git status
+  408    146  git add -A
+  409    147  git status
+  410    148  git commit -m "Überschrift index.html hinzugefügt"
+  411    149  git log 
+  412    150  git checkout master
+  413    151  git log 
+  414    152  cat index.html
+  415    153  git branch beta-test
+  416    154  git branch
+  417    155  git checkout beta-test 
+  418    156  git add -A
+  419    157  git commit -m "backend.py Programmcode hinzugefügt"
+  420    158  git status 
+  421    159  git log 
+  422    160  git status 
+  423    161  git add -A
+  424    162  git commit -m "backend.py Programmcode hinzugefügt"
+  425    163  git log 
+  426    164  git status 
+  427    165  git commit -a -m "backend.py Programmcode geändert"
+  428    166  git status 
+  429    167  git log 
+  430    168  git merge beta 
+  431    169  cat index.html
+  432    170  git checkout master
+  433    171  git megre beta-test
+  434    172  cat index.html
+  435    173  git merge beta-test
+  436    174  cat index.html
+  437    175  git log
+  438    176  Sudo yum install jq
+  439    177  sudo yum install jq
+  440    178  git init
+  441    179  sudo yum install jq
+  442    180  aws ec2 describe-instances | jq -r '.Reservations[].Instances[]|.InstanceId+" "+.InstanceType+" "+(.Tags[] | select(.Key == "Name").Value)'
+  443    181  aws ec2 describe-instances --query 'Reservations[*].Instances[?not_null(PublicIpAddress)]' | jq -r '.[][]|.PublicIpAddress+" "+(.Tags[]|select(.Key=="Name").Value)'
+  444    182  223.64.72.64    fisher.com
+  445    183  198.82.207.161  robinson.com
+  446    184  182.139.20.233  nolan.com
+  447    185  ip a
+  448    186  sudo  systemctl status httpd
+  449    187  sudo  systemctl httpd start
+  450    188  sudo  systemctl start  httpd
+  451    189  mkdir CloudFormation
+  452    190  cd CloudFormation/
+  453    191  touch README.md
+  454    192  ls -l
+  455    193  cd --
+  456    194  cd ..
+  457    195  ls -l
+  458    196  cd  ec2-user/
+  459    197   ls 
+  460    198  cd environment/
+  461    199  ls -l
+  462    200  cd CloudFormation/
+  463    201  git config --global  user.name "Mike Berndt"
+  464    202  git config --global  user.email "Mike-Berndt@web.de"
+  465    203  git init
+  466    204  git status
+  467    205  git add -a
+  468    206  git add -A
+  469    207  git commit -m "Initialiesierung  der CloudFormation Readme.md"
+  470    208  cd ..
+  471    209  ls -l
+  472    210  ls -lah
+  473    211  cd .. 
+  474    212  ls -lah 
+  475    213  nano bashrc
+  476    214  nano .bashrc 
+  477    215  alias gitname-git config --global user.name "Mike Berndt"
+  478    216  alias gitname='git config --global user.name "Mike Berndt"'
+  479    217  nano .bashrc 
+  480    218  ls 
+  481    219  cd environment/
+  482    220  cd CloudFormation/
+  483    221  touch muster-ec2.yml
+  484    222  touch muster-ec2.yaml
+  485    223  git remote add origin https://github.com/6543210meins/AWS_Doc
+  486    224  git add -A 
+  487    225  git Status
+  488    226  git commit -m "Hinzufügen der CloudFormation"
+  489    227  cd ..
+  490    228  cd..
+  491    229  cd ..
+  492    230  ssh-keygen
+  493    231  ls -l
+  494    232  ls -lah
+  495    233  sudo systemctl enable ssh
+  496    234  sudo systemctl status  ssh
+  497    235  sudo systemctl status ssh
+  498    236* 
+  499    237  ssh-keygen
+  500    238  ls -lah .ssh
+  501    239  cat .ssh/id_rsa.pub
+  502    240  ssh -T git@github.com
+  503    241  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  504    242  cd environment/
+  505    243  cd CloudFormation/
+  506    244  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  507    245  git push -u origin main
+  508    246  git push -u origin master
+  509    247  history    1  $shell
+  510      2  SHELL
+  511      3  pwd
+  512      4  echo $shell
+  513      5  echo $SHELL
+  514      6  ping google.de
+  515      7  echo $SHELL
+  516      8  whi iam
+  517      9  whiiam
+  518     10  echo $USER
+  519     11  ssh ec2-user
+  520     12  git --version
+  521     13  mkdir repository
+  522     14  pwd
+  523     15  ls
+  524     16  cd repository/
+  525     17  cd..
+  526     18  ls -lah
+  527     19  cd ..
+  528     20  ls -lah
+  529     21  cd repository/
+  530     22  touch index.html
+  531     23  touch style.css
+  532     24  touch backend.py
+  533     25  mkdir Bilder
+  534     26  cd Bilder/
+  535     27  touch Bild1.jpg Bild2.jpg
+  536     28   touch Bildx.png
+  537     29   touch Bild1.png
+  538     30  cd..
+  539     31  cd ..
+  540     32  mkdir Secrets
+  541     33  touch .gitignore
+  542     34  pwd
+  543     35  itory
+  544     36  hitory
+  545     37  history
+  546     38  clear
+  547     39  git config --global user.name "Mike.Berndt""
+  548     40  git config --global user.name "Mike.Berndt"
+  549     41  git config --global user.Mail "Mike-Berndt@web.de"
+  550     42  git config --global user.email "Mike-Berndt@web.de"
+  551     43  git config --global color.ui auto
+  552     44  ls -lah
+  553     45  git init
+  554     46  ls -lah
+  555     47  git status
+  556     48  git add -A
+  557     49  git status 
+  558     50  chmod 764 index.html
+  559     51  ls -lah
+  560     52  chmod 664 index.html
+  561     53  chmod 764 backend.py
+  562     54  ls -lah
+  563     55  sudo yum update
+  564     56  git status
+  565     57  git add backend.py
+  566     58  git status
+  567     59  git commit -m "mein erstes Commit + Permission file in backend.py geändert"
+  568     60  git status 
+  569     61  ls -lsh
+  570     62  cd repository/
+  571     63  ls -lsh
+  572     64  cd ..
+  573     65  ls -lsh
+  574     66  ls-l
+  575     67  ls
+  576     68  git clone [08:43] Renato Palavecino
+  577     69  https://github.com/ingeniebrio77/AWS-CLI
+  578     70   like 1
+  579     71  GitHub - ingeniebrio77/AWS-CLI: README for AWS-CLI
+  580     72  README for AWS-CLI. Contribute to ingeniebrio77/AWS-CLI development by creating an account on GitHub.
+  581     73  git clone https://github.com/ingeniebrio77/AWS-CLI
+  582     74  ls -lsh
+  583     75  cd AWS-CLI/
+  584     76  git ceckout master
+  585     77  git checkout master
+  586     78  git branch 
+  587     79  git branch
+  588     80  cd ..
+  589     81  cd..
+  590     82  ls -l
+  591     83  mkdir vsCode
+  592     84  cd vsCode/
+  593     85  git clone https://github.com/microsoft/vscode.git
+  594     86  ls -l
+  595     87  cd ..
+  596     88  cd AWS-CLI/
+  597     89  cd .. 
+  598     90  mkdir AwsGit
+  599     91  cd AwsGit/
+  600     92  touch index.html style.css backend.py
+  601     93  mkdir Bilder
+  602     94  touch Bilder/Bild1.png Bild2.png
+  603     95  ls Bilder/
+  604     96  touch Bilder/Bild1.jpg
+  605     97  touch Bilder/Bild2.jpg
+  606     98  ls Bilder/
+  607     99  touch Bilder/Bild2.ong
+  608    100  touch Bilder/Bild2.png
+  609    101  rm Bilder/Bilder2.ong
+  610    102  ls Bilder/
+  611    103  rm Bilder/Bild2.ong
+  612    104  ls Bilder/
+  613    105  touch Beispiel1.txt Beispiel2.txt
+  614    106  cat Besipiel1.txt
+  615    107  cat Beispiel1.txt
+  616    108  rm Beispiel1.txt Beispiel2.txt
+  617    109  mkdir Beispiel1
+  618    110  mkdir Beispiel2
+  619    111  mkdir /Bilder2/Bilder3
+  620    112  mkdir Bilder2/Bilder3
+  621    113  mkdir Beispiel2/Beispiel3
+  622    114  touch Beispiel2/Beispiel3/Mike.txt
+  623    115  cd Beispiel2/Beispiel3/
+  624    116  ls -l
+  625    117  cd .. 
+  626    118  cd ..
+  627    119  rmdir Beispiel1
+  628    120  rmdir Beispiel2
+  629    121  rmdir -r -f Beispiel2
+  630    122  rmdir -rf Beispiel2
+  631    123  rmdir -r Beispiel2
+  632    124  man rm 
+  633    125  rm -rf Beispiel2
+  634    126  mkdir secrets
+  635    127  cd secrets/
+  636    128  cd.. 
+  637    129  cd .. 
+  638    130  touch .gitignore
+  639    131  cat .gitignore 
+  640    132  git config --global user.name "Mike Berndt"
+  641    133  git config --global user.email "Mike-Berndt@web.de"
+  642    134  touch history.txt
+  643    135  history >> history.txt
+  644    136  git init
+  645    137  git status
+  646    138  git add -A
+  647    139  git commit -m "erstes commit"
+  648    140  git status
+  649    141  git log 
+  650    142  git branch beta
+  651    143  git branch 
+  652    144  git checkout beta
+  653    145  git status
+  654    146  git add -A
+  655    147  git status
+  656    148  git commit -m "Überschrift index.html hinzugefügt"
+  657    149  git log 
+  658    150  git checkout master
+  659    151  git log 
+  660    152  cat index.html
+  661    153  git branch beta-test
+  662    154  git branch
+  663    155  git checkout beta-test 
+  664    156  git add -A
+  665    157  git commit -m "backend.py Programmcode hinzugefügt"
+  666    158  git status 
+  667    159  git log 
+  668    160  git status 
+  669    161  git add -A
+  670    162  git commit -m "backend.py Programmcode hinzugefügt"
+  671    163  git log 
+  672    164  git status 
+  673    165  git commit -a -m "backend.py Programmcode geändert"
+  674    166  git status 
+  675    167  git log 
+  676    168  git merge beta 
+  677    169  cat index.html
+  678    170  git checkout master
+  679    171  git megre beta-test
+  680    172  cat index.html
+  681    173  git merge beta-test
+  682    174  cat index.html
+  683    175  git log
+  684    176  Sudo yum install jq
+  685    177  sudo yum install jq
+  686    178  git init
+  687    179  sudo yum install jq
+  688    180  aws ec2 describe-instances | jq -r '.Reservations[].Instances[]|.InstanceId+" "+.InstanceType+" "+(.Tags[] | select(.Key == "Name").Value)'
+  689    181  aws ec2 describe-instances --query 'Reservations[*].Instances[?not_null(PublicIpAddress)]' | jq -r '.[][]|.PublicIpAddress+" "+(.Tags[]|select(.Key=="Name").Value)'
+  690    182  223.64.72.64    fisher.com
+  691    183  198.82.207.161  robinson.com
+  692    184  182.139.20.233  nolan.com
+  693    185  ip a
+  694    186  sudo  systemctl status httpd
+  695    187  sudo  systemctl httpd start
+  696    188  sudo  systemctl start  httpd
+  697    189  mkdir CloudFormation
+  698    190  cd CloudFormation/
+  699    191  touch README.md
+  700    192  ls -l
+  701    193  cd --
+  702    194  cd ..
+  703    195  ls -l
+  704    196  cd  ec2-user/
+  705    197   ls 
+  706    198  cd environment/
+  707    199  ls -l
+  708    200  cd CloudFormation/
+  709    201  git config --global  user.name "Mike Berndt"
+  710    202  git config --global  user.email "Mike-Berndt@web.de"
+  711    203  git init
+  712    204  git status
+  713    205  git add -a
+  714    206  git add -A
+  715    207  git commit -m "Initialiesierung  der CloudFormation Readme.md"
+  716    208  cd ..
+  717    209  ls -l
+  718    210  ls -lah
+  719    211  cd .. 
+  720    212  ls -lah 
+  721    213  nano bashrc
+  722    214  nano .bashrc 
+  723    215  alias gitname-git config --global user.name "Mike Berndt"
+  724    216  alias gitname='git config --global user.name "Mike Berndt"'
+  725    217  nano .bashrc 
+  726    218  ls 
+  727    219  cd environment/
+  728    220  cd CloudFormation/
+  729    221  touch muster-ec2.yml
+  730    222  touch muster-ec2.yaml
+  731    223  git remote add origin https://github.com/6543210meins/AWS_Doc
+  732    224  git add -A 
+  733    225  git Status
+  734    226  git commit -m "Hinzufügen der CloudFormation"
+  735    227  cd ..
+  736    228  cd..
+  737    229  cd ..
+  738    230  ssh-keygen
+  739    231  ls -l
+  740    232  ls -lah
+  741    233  sudo systemctl enable ssh
+  742    234  sudo systemctl status  ssh
+  743    235  sudo systemctl status ssh
+  744    236* 
+  745    237  ssh-keygen
+  746    238  ls -lah .ssh
+  747    239  cat .ssh/id_rsa.pub
+  748    240  ssh -T git@github.com
+  749    241  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  750    242  cd environment/
+  751    243  cd CloudFormation/
+  752    244  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  753    245  git push -u origin main
+  754    246  git push -u origin master
+  755  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  756  git push - u origin  master
+  757  git push - u origin  main 
+  758  nano .bashrc 
+  759  rm -rf AWS-CLI/.git
+  760  rm -rf AWSGit/.git
+  761  rm -rf AwsGit/.git
+  762  rm -rf CloudFormation/.git
+  763  rm -rf repository/.git
+  764  sudo systemctl status
+  765  sudo systemctl status ssh
+  766  sudo systemctl start ssh
+  767  sudo systemctl service
+  768  sudo systemctl 
+  769  sudo systemctl ssh
+  770  sudo systemctl status ssh
+  771  history | grep ssh
+  772  sudo systemctl status ssh
+  773  sudo systemctl enable  ssh
+  774  sudo systemctl enable ssh
+  775  sudo systemctl service | grep ssh 
+  776  sudo systemctl service | grep httpd
+  777  sudo systemctl  | grep httpd
+  778  sudo systemctl  
+  779  sudo systemctl  | grep ssh 
+  780  sudo systemctl status shhd
+  781  sudo systemctl status shhd.service
+  782  sudo systemctl status sshd
+  783  ssh -T git@github.com 
+  784  cd CloudFormation/
+  785  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  786  cd..
+  787  cd --
+  788  cd ..
+  789  ls -lsh
+  790  ls -lah
+  791  cd ec2-user/
+  792  ls -lah
+  793  cd environment/
+  794  ls -lah
+  795  cd repository/
+  796  ls -lah 
+  797  ls -lcd .. 
+  798  cd .. 
+  799  cd CloudFormation/
+  800  ls -lah
+  801  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  802  ssh -T git@gihub.com 
+  803  ssh -T git@github.com 
+  804  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  805  git config --global user.name "Mike Berndt"
+  806  git config --global user.email "Mike-Berndt@web.de"
+  807  git init
+  808  git status 
+  809  git add -A
+  810  git status
+  811  git remote add origin git@github.com:6543210meins/CloudFormation.git
+  812  git commit - m "CloudFormation in github hinzugefügt"
+  813  ls -lah
+  814  git add -A
+  815  git status
+  816  mkdir Praktikum
+  817  cd Praktikum
+  818  aws ec2 describe-images
+  819  ls -lah
+  820  cd Praktikum
+  821  ls -lah
+  822  which git 
+  823  git --version
+  824  touch README.md
+  825  ls l
+  826  ls -l
+  827  git commit
+  828  git config --global user.name "Mike Berndt" && git config --global user.email "Mike-Berndt@web.de"
+  829  history
+  830   git config --global credential.helper '!aws codecommit credential-helper $@'
+  831  git config --global credential.UseHttpPath true
+  832  git config --global credential.helper '!aws codecommit credential-helper $@'
+  833  git config --global credential.UseHttpPath true
+  834  ls -lah
+  835  git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/Praktikum-Berndt-Mike
+  836  cd Praktikum-Berndt-Mike/
+  837  cd .. 
+  838  mv README.md Praktikum-Berndt-Mike/
+  839  cd Praktikum-Berndt-Mike/
+  840  ls -lah
+  841  git status
+  842  git add README.md 
+  843  git status
+  844  git commit - m "Erstes Commit"
+  845  git commit -m "Erstes Commit"
+  846  git status
+  847  git push
+  848  git log
+  849  history
+  850  [A
+  851  history
+  852  history >> history.txt
+  853  vim history.txt
+  854  history
+  855  vim history.txt 
+  856  git add README.md 
+  857  git commit -m "Erstes Commit-History aktualisiert"
+  858  git push
+  859  git log
+  860  git add README.md 
+  861  git push
+  862  git status
+  863  git add README.md 
+  864  git status
+  865  git push
+  866  git add README.md 
+  867  git commit -m "Erstes Commit-History aktualisiert"
+  868  git push
+  869  git add README.md 
+  870  git push
+  871  git commit -m "Erstes Commit-History aktualisiert"
+  872  git push
+  873  git add README.md 
+  874  git commit -m "Erstes Commit-Github verbindung hinzugefügt"
+  875  git push
+  876  git add README.md 
+  877  git push
+  878  git commit -m "Erstes Commit-Github verbindung hinzugefügt"
+  879  git push
+  880  git add README.md 
+  881  git commit -m "14:40 22.05.23 - leztes commit"
+  882  rm history.txt 
+  883  git commit -m "14:40 22.05.23 - leztes commit"
+  884  git add README.md 
+  885  git commit -m "Erstes Commit-Github verbindung hinzugefügt"
+  886  git commit -m "14:40 - 22.05.23 - letztes commit des Tages"
+  887  git add README.md 
+  888  git commit -m "14:40 - 22.05.23 - letztes commit des Tages"
+  889  git push
+  890  git add README.md 
+  891  git commit -m "14:40 - 22.05.23 - letztes commit des Tages"
+  892  git add README.md 
+  893  git commit -m "14:40 - 22.05.23 - letztes commit des Tages"
+  894  git push
+  895  git add README.md 
+  896  cd Praktikum/
+  897  cd Praktikum-Berndt-Mike/
+  898  git add README.md 
+  899  git commit -m "Readme aktualisiert und NginX tag hinzugefügt 23.05.23 - 08:45"
+  900  git push 
+  901  aws ec2 create-key-pair --key-name MyTestKey1 --query 'KeyMaterial' --output text > MyTestKey.pem
+  902  aws ec2 describe-key-pairs --key-name MyTestKey
+  903  aws ec2 describe-key-pairs | grep MyTestKey
+  904  aws ec2 describe-key-pairs
+  905  aws ec2 create-key-pair --key-name MyTestKey1 --query 'KeyMaterial' --output text > MyTestKey-Berndt.pem
+  906  aws ec2 describe-key-pairs
+  907  aws ec2 create-key-pair --key-name NGINX-Berndt --query 'KeyMaterial' --output text > NGINX-Berndt.pem
+  908  aws ec2 describe-key-pairs
+  909  ec2 create-security-group --group-name berX-sg --description "sg fuer ec2-NginX"
+  910  aws ec2 create-security-group --group-name berX-sg --description "sg fuer ec2-NginX"
+  911  aws ec2 create-security-group --group-name berndtX-sg --description "sg fuer ec2-NginX"
+  912  security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 80 --cidr 0.0.0.0/0 
+  913  aws ec2 authorize -security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 80 --cidr 0.0.0.0/0 
+  914* aws ec2 authorize urity-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 22 --cidr 0.0.0.0/0
+  915  aws ec2 authorize-security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 80 --cidr 0.0.0.0/0
+  916  aws ec2 authorize-security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 22 --cidr 0.0.0.0/0
+  917  git add README.md 
+  918  git commit -m "NginX SG erstellt und konfiguriert EC2 Instanz erstellt 23.05.23 - 10:00"
+  919  git push
+  920  history > History.txt
+  921  git add History.txt 
+  922  git commit -m "History.txt hinzugefügt  23.05.23 - 10:03"
+  923  git push
+  924  ws ec2 describe-security-groups --group-ids sg-01d44a81152f148e8
+  925  aws ec2 describe-security-groups --group-ids sg-01d44a81152f148e8
+  926  vim nginxscriptBerndt.sh
+  927  aws ec2 run-instances --image-id ami-04e601abe3e1a910f --count 1 --instance-type t2.micro --key-name NGINX-Berndt --security-group BerndtX-sg --user-data file://nginxscriptBerndt.sh
+  928  aws ec2 run-instances --image-id ami-04e601abe3e1a910f --count 1 --instance-type t2.micro --key-name NGINX-Berndt --security-groups berndtX-sg  --user-data file://nginxscriptBerndt.sh
+  929  ssh -i NGINX-Berndt.pem Ubuntu@52.59.249.130
+  930  ls -lah
+  931  chmod 400 NGINX-Berndt.pem
+  932  ls -lah
+  933  ssh -i NGINX-Berndt.pem Ubuntu@52.59.249.130
+  934  ssh -i NGINX-Berndt.pem ubuntu@52.59.249.130
+  935  git add -A
+  936  git commit -m "NginX Komplettiert, SSH-Verbinfung aufgebaut 23.05.23 - 14:30"
+  937  git push
+  938  history > History.txt
