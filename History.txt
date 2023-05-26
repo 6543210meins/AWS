@@ -911,7 +911,7 @@
   911  aws ec2 create-security-group --group-name berndtX-sg --description "sg fuer ec2-NginX"
   912  security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 80 --cidr 0.0.0.0/0 
   913  aws ec2 authorize -security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 80 --cidr 0.0.0.0/0 
-  914* aws ec2 authorize urity-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 22 --cidr 0.0.0.0/0
+  914  aws ec2 authorize -security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 22 --cidr 0.0.0.0/0 
   915  aws ec2 authorize-security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 80 --cidr 0.0.0.0/0
   916  aws ec2 authorize-security-group-ingress --group-id sg-01d44a81152f148e8 --protocol tcp --port 22 --cidr 0.0.0.0/0
   917  git add README.md 
@@ -924,15 +924,398 @@
   924  ws ec2 describe-security-groups --group-ids sg-01d44a81152f148e8
   925  aws ec2 describe-security-groups --group-ids sg-01d44a81152f148e8
   926  vim nginxscriptBerndt.sh
-  927  aws ec2 run-instances --image-id ami-04e601abe3e1a910f --count 1 --instance-type t2.micro --key-name NGINX-Berndt --security-group BerndtX-sg --user-data file://nginxscriptBerndt.sh
-  928  aws ec2 run-instances --image-id ami-04e601abe3e1a910f --count 1 --instance-type t2.micro --key-name NGINX-Berndt --security-groups berndtX-sg  --user-data file://nginxscriptBerndt.sh
-  929  ssh -i NGINX-Berndt.pem Ubuntu@52.59.249.130
-  930  ls -lah
-  931  chmod 400 NGINX-Berndt.pem
+  927  aws ec2 describe-key-pairs --key-name MyTestKey
+  928  aws ec2 describe-key-pairs 
+  929  aws ec2 run-instances --image-id ami-04e601abe3e1a910f --count 1 --instance-type t2.micro --key-name NGINX-Berndt --security-group BerndtX-sg --user-data file://nginxscriptBerndt.sh
+  930  aws ec2 run-instances --image-id ami-04e601abe3e1a910f --count 1 --instance-type t2.micro --key-name NGINX-Berndt --security-groups berndtX-sg  --user-data file://nginxscriptBerndt.sh
+  931  ssh -i NGINX-Berndt.pem Ubuntu@52.59.249.130
   932  ls -lah
-  933  ssh -i NGINX-Berndt.pem Ubuntu@52.59.249.130
-  934  ssh -i NGINX-Berndt.pem ubuntu@52.59.249.130
-  935  git add -A
-  936  git commit -m "NginX Komplettiert, SSH-Verbinfung aufgebaut 23.05.23 - 14:30"
-  937  git push
-  938  history > History.txt
+  933  chmod 400 NGINX-Berndt.pem
+  934  ls -lah
+  935  ssh -i NGINX-Berndt.pem Ubuntu@52.59.249.130
+  936  ssh -i NGINX-Berndt.pem ubuntu@52.59.249.130
+  937  git add -A
+  938  git commit -m "NginX Komplettiert, SSH-Verbinfung aufgebaut 23.05.23 - 14:30"
+  939  git push
+  940  history > History.txt
+  941  git add History.txt 
+  942  git commit -m "History.txt aktuallisiert 23.05.23 - 14:30"
+  943  git push
+  944  ssh -i NGINX-Berndt ubuntu@18.197.129.173
+  945  ssh -i  ubuntu@18.197.129.173
+  946  cd Praktikum/Praktikum-Berndt-Mike/ | ssh -i NGINX-Berndt  ubuntu@18.197.129.173
+  947  cd Praktikum/Praktikum-Berndt-Mike/ 
+  948  ssh -i NGINX-Berndt ubuntu@18.197.129.173
+  949  ssh -i NGINX-Berndt.pem  ubuntu@18.197.129.173
+  950  sudo nano /etc/ssh/ssh_config
+  951  sudo nano /etc/ssh/sshd_config
+  952  cd..
+  953  cd ..
+  954  mkdir Berndt_Instanze
+  955  touch README.md
+  956  rm -rf README.md 
+  957  cd Berndt_Instanze/
+  958  touch README.md
+  959  aws ec2 create-key-pair --key-name NGINX-Berndt --query 'KeyMaterial' --output text > Berndt_Instanze.pem 
+  960  aws ec2 create-key-pair --key-name Berndt_Instanze --query 'KeyMaterial' --output text > Berndt_Instanze.pem 
+  961  aws ec2 create-security-group --group-name Berndt__Instanze-sg --description "sg für Berndt_Instanze"
+  962  aws ec2 create-security-group --group-name Berndt__Instanze-sg --description "sg für BerndtInstanze"
+  963  aws ec2 create-security-group --group-name Berndt__Instanze-sg --description "sg für Berndt-Instanze"
+  964  aws ec2 create-security-group --group-name Berndt__Instanze-sg --description "sg für Berndt Instanze"
+  965  aws ec2 create-security-group --group-name Berndt__Instanze-sg --description "sg fuer Berndt Instanze"
+  966  aws ec2 authorize-security-group-ingress --group-id  --protocol tcp --port 80 --cidr 0.0.0.0/0
+  967  aws ec2 authorize-security-group-ingress --group-id sg-044eb6138c56d6bc8 --protocol tcp --port 80 --cidr 0.0.0.0/0
+  968  aws ec2 authorize-security-group-ingress --group-id sg-044eb6138c56d6bc8 --protocol tcp --port 22 --cidr 0.0.0.0/0
+  969  vim Berndt_Instanze_Nginx_Script.sh
+  970  aws ec2 run-instances Help
+  971  man aws ec2 run-instances 
+  972  man aws
+  973  aws help
+  974  aws ec2 help
+  975  man aws ec2 run-instances help
+  976  aws ec2 run-instances --image-id ami-04e601abe3e1a910f --count 1 --instance-type t2.micro --key-name Berndt_Instanze --security-groups Berndt__Instanze-sg  --user-data file://Berndt_Instanze_Nginx_Script.sh
+  977  git config --global user.name "Mike Berndt" && git config --global user.email "Mike-Berndt@xxx.de"
+  978  git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/Berndt_Instanze_nginx
+  979  git config --global credential.helper '!aws codecommit credential-helper $@'
+  980  git config --global credential.UseHttpPath true
+  981  git add -A
+  982  rm -rf Berndt_Instanze
+  983  rm -rf /Berndt_Instanze
+  984  git config --global user.name "Mike Berndt" && git config --global user.email "Mike-Berndt@xxx.de"
+  985  cd ..
+  986  cd Berndt_Instanze/
+  987  git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/Berndt_Instanze
+  988  rm -r Berndt_Instanze
+  989  cd ..
+  990  git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/Berndt_Instanze
+  991  cd Berndt_Instanze/
+  992  git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/Berndt_Instanze
+  993  cd Berndt_Instanze/
+  994  git add -A
+  995  git commit -m "Zweite Instanze"
+  996  git push
+  997  ssh - i Berndt_Instanze.pem ubuntu@ec2-18-196-157-189.eu-central-1.compute.amazonaws.com
+  998  ssh -i Berndt_Instanze.pem ubuntu@ec2-18-196-157-189.eu-central-1.compute.amazonaws.com
+  999  chmod 400 Berndt_Instanze.pem 
+ 1000  ssh -i Berndt_Instanze.pem ubuntu@ec2-18-196-157-189.eu-central-1.compute.amazonaws.com
+ 1001  cd..
+ 1002  cd . 
+ 1003  cd .. 
+ 1004  cd ..
+ 1005  cd Praktikum-Berndt-Mike/
+ 1006  git add -A
+ 1007  git commit -m "Aktualiesierung vom 23.05.23 - 14:17"
+ 1008  git push
+ 1009  git add -A
+ 1010  git commit -m "Aktualiesierung und Vervollstädigung der README.md  vom 23.05.23 - 14:51"
+ 1011  git push
+ 1012  cd Praktikum/
+ 1013  cd Berndt_Instanze/
+ 1014  ssh -i Berndt_Instanze.pem ubuntu@ec2-3-70-131-47.eu-central-1.compute.amazonaws.com
+ 1015  cd ..
+ 1016  aws configure set default.region eu-west-3
+ 1017  cd Praktikum/
+ 1018  cd Praktikum-Berndt-Mike/
+ 1019  ls 
+ 1020  git add -A
+ 1021  sit status
+ 1022  git commit -m "Hinzugefügt der EC2 Installation mit der AWS CLI -  vom 25.05.23 - 21:46"
+ 1023  git push
+ 1024  cd.. 
+ 1025  cd .. 
+ 1026  mkdir AWS
+ 1027  cp Praktikum-Berndt-Mike/ AWS/
+ 1028  cp Praktikum-Berndt-Mike/ /AWS/
+ 1029  man cp
+ 1030  cp -rf Praktikum-Berndt-Mike/ AWS/
+ 1031  ls 
+ 1032  cd AWS
+ 1033  dor 
+ 1034  dir
+ 1035  cd Praktikum-Berndt-Mike/
+ 1036  ls 
+ 1037  ls -lah
+ 1038  rm -rf .git/
+ 1039  dir 
+ 1040  git config --global user.name "Mike Berndt" && git config --global user.email "Mike-Berndt@web.de"
+ 1041  cd.. 
+ 1042  cd .. 
+ 1043  cd -- 
+ 1044  ls -lah
+ 1045  cd .ssh/
+ 1046  ls 
+ 1047  cat id_rsa
+ 1048  vim authorized_keys 
+ 1049  -----BEGIN RSA PRIVATE KEY-----
+ 1050  MIIEpAIBAAKCAQEAv8vv5/T99S8zuAr5QDg8qBeRGRt/Vqc9XjTDeL61S5swQxVD
+ 1051  PMptciTiI6nQuQMrO5QBu+YqpxjTLvmv0WiPTVueiSMkdaQRmQHaWqHzLDNZcBpv
+ 1052  hoi8q/B5lgyPduEfgQJtqpBrxjwncUuc2ur2OeVU8ifVI3Tq0A5X7Ns1wdHsRVYL
+ 1053  2t/5guVgdwIgV3PcJWZqE59UlSZFKuyha7pn69setnKhfhPduWhM6EFverkGcynY
+ 1054  tEn3jldYLaaQWV10ST9njOEbBWW6+5maZgl4XUq14iUnNrKlGmTyCl/6pezPzsHZ
+ 1055  pBfvwoSxEQhjO9pEzSl8drCiibLOpsccs84pSwIDAQABAoIBAEAk1mE/IEgFt0hP
+ 1056  8zg1FqQo7Y/2EEpMuEtvXghdz4gvqJ5m2AvWr2/DQhYnTvTxSF4ui73ppk4oEUje
+ 1057  nJxuWa7He2fl5uWpL3F6mypAi3E24yyIys+1n1PpouA55ykc9UpSI5ctob20lIRh
+ 1058  g137wsluF1C9XZz0FyvqACHo1juxgxcncKGhVyT18xvBPMzRjkaMpvW+55RITcEh
+ 1059  qncqSBxSUgoqAFCeeY7Ipex5sh1EF7lnmhQZQi2fgky/HcjVG5ySEeRKGe6u2wUU
+ 1060  nSMwV3HTpILXO7roQY3+BTCDYjsESmNXbVNWzHr4+4Ohc1Kc3jwfZfkshCnhis5n
+ 1061  V9O4EMECgYEA4HtY+9qBGsbdcj9UOrzqKSFNq/3xuXK9npz9ut5mNSSrn1/+/Oi0
+ 1062  vw+AHDiCuECeIyYdYwMntUSCfyUaXSGWxZp1N4Qec+MtUHeFNuxQVp5q3gS9gDz1
+ 1063  PHXPFdqQG2dlvP7QFVlsm7LzTNkiDkEMnrOdNIhe4mE6wWzlEDpmd5sCgYEA2rnF
+ 1064  SCVZdwNz1CDIW2gNn2R933AVBxbqyZ/DdMG9U22Sg+8Vi0cPb/zg6sHsYJMCjwxN
+ 1065  ncHp9WapPGcpYcZIpqyTB54ZgILB2GC3mdYGGE5oWpqfSeKXKdNVU5iG+xWeWMd3
+ 1066  il+xDbolvm0+A3QJ1k2HHgpGeb88i9Y6dn3wKBECgYEAvx+F1Xhl71xdckYE+rWZ
+ 1067  UEdwj/z374KHeyICzTVJI/oCvQDIYp/mM72Iv35FnYY2nYp3/rLS/fxEdugqGBze
+ 1068  94LYRdoQ624CSL5aBzcP94+NQVYb2bEMwtsy41Jg21QfRNhWZbbrR20GxOkhm606
+ 1069  h2w5bl6lGmzZz5FdPYHbd/0CgYBbTWLBy/19ha5rJUgdh+Dv4UX96E6OyA04Hv27
+ 1070  FkiOs9WOR1YJ7p7OE5Rbypl+cr+FsRARQ2oDK1iHw1Rt4RRgpvc1HdTtZSe/yBe8
+ 1071  GrAuo0RCVfsaH4EUT4h1vdzSoOKZkqIe2/UPkt3AkN9rF5wnnfNCIe3rUl3WzZVX
+ 1072  8xg10QKBgQC6u3vEMiCjh1lZJ9yMsuXl7aBmFfX4oBMEeGiXyUYf8GgA3cKotpW4
+ 1073  lFQYbEYpq1SBBFHMKGd2uWylW1xSS6vEimdhhQ632XdZuq8l+Jj9yR2LOsxAe3kQ
+ 1074  Xat9/KNI6dK5po9GaRG8tsl5K93fkWufzPn4DMmgJ59a9iF0zMSPtQ==
+ 1075  -----END RSA PRIVATE KEY----------BEGIN RSA PRIVATE KEY-----
+ 1076  MIIEpAIBAAKCAQEAv8vv5/T99S8zuAr5QDg8qBeRGRt/Vqc9XjTDeL61S5swQxVD
+ 1077  PMptciTiI6nQuQMrO5QBu+YqpxjTLvmv0WiPTVueiSMkdaQRmQHaWqHzLDNZcBpv
+ 1078  hoi8q/B5lgyPduEfgQJtqpBrxjwncUuc2ur2OeVU8ifVI3Tq0A5X7Ns1wdHsRVYL
+ 1079  2t/5guVgdwIgV3PcJWZqE59UlSZFKuyha7pn69setnKhfhPduWhM6EFverkGcynY
+ 1080  tEn3jldYLaaQWV10ST9njOEbBWW6+5maZgl4XUq14iUnNrKlGmTyCl/6pezPzsHZ
+ 1081  pBfvwoSxEQhjO9pEzSl8drCiibLOpsccs84pSwIDAQABAoIBAEAk1mE/IEgFt0hP
+ 1082  8zg1FqQo7Y/2EEpMuEtvXghdz4gvqJ5m2AvWr2/DQhYnTvTxSF4ui73ppk4oEUje
+ 1083  nJxuWa7He2fl5uWpL3F6mypAi3E24yyIys+1n1PpouA55ykc9UpSI5ctob20lIRh
+ 1084  g137wsluF1C9XZz0FyvqACHo1juxgxcncKGhVyT18xvBPMzRjkaMpvW+55RITcEh
+ 1085  qncqSBxSUgoqAFCeeY7Ipex5sh1EF7lnmhQZQi2fgky/HcjVG5ySEeRKGe6u2wUU
+ 1086  nSMwV3HTpILXO7roQY3+BTCDYjsESmNXbVNWzHr4+4Ohc1Kc3jwfZfkshCnhis5n
+ 1087  V9O4EMECgYEA4HtY+9qBGsbdcj9UOrzqKSFNq/3xuXK9npz9ut5mNSSrn1/+/Oi0
+ 1088  vw+AHDiCuECeIyYdYwMntUSCfyUaXSGWxZp1N4Qec+MtUHeFNuxQVp5q3gS9gDz1
+ 1089  PHXPFdqQG2dlvP7QFVlsm7LzTNkiDkEMnrOdNIhe4mE6wWzlEDpmd5sCgYEA2rnF
+ 1090  SCVZdwNz1CDIW2gNn2R933AVBxbqyZ/DdMG9U22Sg+8Vi0cPb/zg6sHsYJMCjwxN
+ 1091  ncHp9WapPGcpYcZIpqyTB54ZgILB2GC3mdYGGE5oWpqfSeKXKdNVU5iG+xWeWMd3
+ 1092  il+xDbolvm0+A3QJ1k2HHgpGeb88i9Y6dn3wKBECgYEAvx+F1Xhl71xdckYE+rWZ
+ 1093  UEdwj/z374KHeyICzTVJI/oCvQDIYp/mM72Iv35FnYY2nYp3/rLS/fxEdugqGBze
+ 1094  94LYRdoQ624CSL5aBzcP94+NQVYb2bEMwtsy41Jg21QfRNhWZbbrR20GxOkhm606
+ 1095  h2w5bl6lGmzZz5FdPYHbd/0CgYBbTWLBy/19ha5rJUgdh+Dv4UX96E6OyA04Hv27
+ 1096  FkiOs9WOR1YJ7p7OE5Rbypl+cr+FsRARQ2oDK1iHw1Rt4RRgpvc1HdTtZSe/yBe8
+ 1097  GrAuo0RCVfsaH4EUT4h1vdzSoOKZkqIe2/UPkt3AkN9rF5wnnfNCIe3rUl3WzZVX
+ 1098  8xg10QKBgQC6u3vEMiCjh1lZJ9yMsuXl7aBmFfX4oBMEeGiXyUYf8GgA3cKotpW4
+ 1099  lFQYbEYpq1SBBFHMKGd2uWylW1xSS6vEimdhhQ632XdZuq8l+Jj9yR2LOsxAe3kQ
+ 1100  Xat9/KNI6dK5po9GaRG8tsl5K93fkWufzPn4DMmgJ59a9iF0zMSPtQ==
+ 1101  cat <<EOF >> authorized_keys 
+ 1102  -----BEGIN RSA PRIVATE KEY-----
+ 1103  MIIEpAIBAAKCAQEAv8vv5/T99S8zuAr5QDg8qBeRGRt/Vqc9XjTDeL61S5swQxVD
+ 1104  PMptciTiI6nQuQMrO5QBu+YqpxjTLvmv0WiPTVueiSMkdaQRmQHaWqHzLDNZcBpv
+ 1105  hoi8q/B5lgyPduEfgQJtqpBrxjwncUuc2ur2OeVU8ifVI3Tq0A5X7Ns1wdHsRVYL
+ 1106  2t/5guVgdwIgV3PcJWZqE59UlSZFKuyha7pn69setnKhfhPduWhM6EFverkGcynY
+ 1107  tEn3jldYLaaQWV10ST9njOEbBWW6+5maZgl4XUq14iUnNrKlGmTyCl/6pezPzsHZ
+ 1108  pBfvwoSxEQhjO9pEzSl8drCiibLOpsccs84pSwIDAQABAoIBAEAk1mE/IEgFt0hP
+ 1109  8zg1FqQo7Y/2EEpMuEtvXghdz4gvqJ5m2AvWr2/DQhYnTvTxSF4ui73ppk4oEUje
+ 1110  nJxuWa7He2fl5uWpL3F6mypAi3E24yyIys+1n1PpouA55ykc9UpSI5ctob20lIRh
+ 1111  g137wsluF1C9XZz0FyvqACHo1juxgxcncKGhVyT18xvBPMzRjkaMpvW+55RITcEh
+ 1112  qncqSBxSUgoqAFCeeY7Ipex5sh1EF7lnmhQZQi2fgky/HcjVG5ySEeRKGe6u2wUU
+ 1113  nSMwV3HTpILXO7roQY3+BTCDYjsESmNXbVNWzHr4+4Ohc1Kc3jwfZfkshCnhis5n
+ 1114  V9O4EMECgYEA4HtY+9qBGsbdcj9UOrzqKSFNq/3xuXK9npz9ut5mNSSrn1/+/Oi0
+ 1115  vw+AHDiCuECeIyYdYwMntUSCfyUaXSGWxZp1N4Qec+MtUHeFNuxQVp5q3gS9gDz1
+ 1116  PHXPFdqQG2dlvP7QFVlsm7LzTNkiDkEMnrOdNIhe4mE6wWzlEDpmd5sCgYEA2rnF
+ 1117  SCVZdwNz1CDIW2gNn2R933AVBxbqyZ/DdMG9U22Sg+8Vi0cPb/zg6sHsYJMCjwxN
+ 1118  ncHp9WapPGcpYcZIpqyTB54ZgILB2GC3mdYGGE5oWpqfSeKXKdNVU5iG+xWeWMd3
+ 1119  il+xDbolvm0+A3QJ1k2HHgpGeb88i9Y6dn3wKBECgYEAvx+F1Xhl71xdckYE+rWZ
+ 1120  UEdwj/z374KHeyICzTVJI/oCvQDIYp/mM72Iv35FnYY2nYp3/rLS/fxEdugqGBze
+ 1121  94LYRdoQ624CSL5aBzcP94+NQVYb2bEMwtsy41Jg21QfRNhWZbbrR20GxOkhm606
+ 1122  h2w5bl6lGmzZz5FdPYHbd/0CgYBbTWLBy/19ha5rJUgdh+Dv4UX96E6OyA04Hv27
+ 1123  FkiOs9WOR1YJ7p7OE5Rbypl+cr+FsRARQ2oDK1iHw1Rt4RRgpvc1HdTtZSe/yBe8
+ 1124  GrAuo0RCVfsaH4EUT4h1vdzSoOKZkqIe2/UPkt3AkN9rF5wnnfNCIe3rUl3WzZVX
+ 1125  8xg10QKBgQC6u3vEMiCjh1lZJ9yMsuXl7aBmFfX4oBMEeGiXyUYf8GgA3cKotpW4
+ 1126  lFQYbEYpq1SBBFHMKGd2uWylW1xSS6vEimdhhQ632XdZuq8l+Jj9yR2LOsxAe3kQ
+ 1127  Xat9/KNI6dK5po9GaRG8tsl5K93fkWufzPn4DMmgJ59a9iF0zMSPtQ==
+ 1128  -----END RSA PRIVATE KEY-----
+ 1129  EOF
+ 1130  vim authorized_keys 
+ 1131  cd ..
+ 1132  ssh-keygen
+ 1133  ls -lah .ssh
+ 1134  ls 
+ 1135  cd environment/
+ 1136  la
+ 1137  ls
+ 1138  cd Praktikum/
+ 1139  cd AWS/
+ 1140  Cd Praktikum-Berndt-Mike/
+ 1141  ls
+ 1142  cd Praktikum-Berndt-Mike/
+ 1143  git config --global user.name "Mike Berndt" && git config --global user.email "Mike-Berndt@xxx.de"
+ 1144  git config --global user.name "Mike Berndt" && git config --global user.email "Mike-Berndt@web.de"
+ 1145  ssh -T git@github.com
+ 1146  git remote add origin git@github.com:6543210meins/AWS.git
+ 1147  git remote add origin "git@github.com:6543210meins/AWS.git"
+ 1148  ls 
+ 1149  ls -lah
+ 1150  git ini
+ 1151  git init
+ 1152  git remote add origin git@github.com:6543210meins/AWS.git
+ 1153  git push -u origin master
+ 1154  git add -A
+ 1155  git commit -m "AWS Unterricht git hub aktualiesierung vom 25.05.23 22.16.23"
+ 1156  git push
+ 1157  git push --set-upstream origin master
+ 1158  ssh-keygen
+ 1159  sudo systemctl start httpd
+ 1160  sudo systemctl status httpd
+ 1161  docker --version
+ 1162  docker run --name Berndt-wordpress -p 8080:80 -d wordpress
+ 1163  docker images
+ 1164  docker ps
+ 1165  ip a
+ 1166  docker run ubuntu
+ 1167  docker image 
+ 1168  docker images
+ 1169  docker run -it ubuntu /bin/bash
+ 1170  sudo xum install htop
+ 1171  sudo yum install htop
+ 1172  htop
+ 1173  cd Praktikum/
+ 1174  cd Praktikum-Berndt-Mike/
+ 1175  git add -A
+ 1176  git commit -m "Readme.md Aktualisiert 26.05.23 - 09:40"
+ 1177  git push
+ 1178  ls -lah
+ 1179  cp README.md ./AWS
+ 1180  cp README.md ./AWS/
+ 1181  cp README.md ~/environment/Praktikum/AWS/
+ 1182  cp README.md ~/environment/Praktikum/AWS/Praktikum-Berndt-Mike/
+ 1183  cd ..
+ 1184  cd Praktikum/
+ 1185  cd AWS/Praktikum-Berndt-Mike/
+ 1186  git add -A
+ 1187  git commit -m "Readme.md Aktualisierung am 26.05.23 - 10:15"
+ 1188  git push
+ 1189  cd..
+ 1190  cat <<EOF > Test.sh
+read "Bitte gebe einen Namen ein" name
+echo $name
+EOF
+
+ 1191  bash Test.sh 
+ 1192  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein" name
+echo $name
+EOF
+
+ 1193  bash Test.sh 
+ 1194  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein: " name
+echo name
+EOF
+
+ 1195  bash Test.sh 
+ 1196  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein: " $name
+echo name
+EOF
+
+ 1197  bash Test.sh 
+ 1198  cat <<EOF > Test.sh
+$Name=(read -p "Bitte gebe einen Namen ein: ") 
+echo name
+EOF
+
+ 1199  bash Test.sh 
+ 1200  cat <<EOF > Test.sh
+$Name=read -p "Bitte gebe einen Namen ein: " 
+echo name
+EOF
+
+ 1201  bash Test.sh 
+ 1202  cat <<EOF > Test.sh
+$Name=read -p "Bitte gebe einen Namen ein: " 
+echo $Name
+EOF
+
+ 1203  bash Test.sh 
+ 1204  cat <<EOF > Test.sh
+$Name= read -p "Bitte gebe einen Namen ein: " 
+echo $Name
+EOF
+
+ 1205  bash Test.sh 
+ 1206  cat <<EOF > Test.sh
+$Name= (read -p "Bitte gebe einen Namen ein: ") 
+echo $Name
+EOF
+
+ 1207  bash Test.sh 
+ 1208  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein: " Name 
+echo $Name
+EOF
+
+ 1209  bash Test.sh 
+ 1210  echo $Name
+ 1211  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein: " Name 
+echo $Name
+EOF
+
+ 1212  cat <<EOF > Test.shecho $Name
+EOF
+
+ 1213  echo $Name
+ 1214  cat <<EOF > Test.shecho $Name
+EOF
+
+ 1215  echo $Name
+ 1216  bash Test.sh 
+ 1217  git add -A
+ 1218  git push 
+ 1219  git commit -m "script Test.sh hinzugefügt"
+ 1220  git push 
+ 1221  cat <<EOF > Test.sh
+$Name= (read -p "Bitte gebe einen Namen ein: ") 
+echo $Name&".pem"
+EOF
+
+ 1222  bash Test.sh 
+ 1223  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein: " Name
+echo $Name&".pem"
+EOF
+
+ 1224  bash Test.sh 
+ 1225  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein: " Name
+echo $Name&&".pem"
+EOF
+
+ 1226  bash Test.sh 
+ 1227  cat <<EOF > Test.sh
+read -p "Bitte gebe einen Namen ein: " Name
+echo $Name".pem"
+EOF
+
+ 1228  bash Test.sh 
+ 1229  git add -A
+ 1230  git commit -m "script Test.sh hinzugefügt"
+ 1231  git push 
+ 1232  cd ..
+ 1233  cd..
+ 1234  cd ..
+ 1235  cp AWS/Praktikum-Berndt-Mike/Test.sh /Praktikum-Berndt-Mike/
+ 1236  cp AWS/Praktikum-Berndt-Mike/Test.sh Praktikum-Berndt-Mike/
+ 1237  cd Praktikum-Berndt-Mike/
+ 1238  git add -A
+ 1239  git commit -m "Test.sh hinzugefügt"
+ 1240  git push
+ 1241  pip install python 
+ 1242  sudo yum update
+ 1243  pip install --upgrade pip
+ 1244  pip install flask
+ 1245  python app.py
+ 1246  git add -A
+ 1247  git commit -m "Flask-app hinzugefügt"
+ 1248  git push
+ 1249  git add -A
+ 1250  git commit -m "Readme akktualiesiert"
+ 1251  git push
+ 1252  git add -A
+ 1253  git commit -m "Readme akktualiesiert"
+ 1254  git add -A
+ 1255  git commit -m "Readme akktualiesiert"
+ 1256  history 
+ 1257  history > History.txt 
