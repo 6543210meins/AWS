@@ -263,7 +263,8 @@ zsh
 fish-shell
 PowerShell (Core)
 
-
+#### Partitionierung
+/EFI = 300 Mb => Format: FAT32/vFAT /boot = bis 512 Mb => Format: ext2/3/4 /swap = 1Gb RAM => 2Gb 2Gb RAM => 4Gb 4Gb RAM => 2Gb 12Gb RAM => Kein swap /root = ab 50 Gb /home = gemäß Anwender
 
 ## Tmux Multiplexor
 
