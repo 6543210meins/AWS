@@ -268,7 +268,11 @@ PowerShell (Core)
 
 ## Tmux Multiplexor
 
-    
+    Ctrl + b --> Tastaturkürzel (Prefix)
+    New Window --> Prefix + c
+    Fenster Horizontaler Teilen --> Prefix + "
+    Fenster Vertical Teilen --> Prefix + %  
+    Session Liste --> Prefix + s    
 
 ## Enrichten einer Webseite auf NginX und Linux
 
