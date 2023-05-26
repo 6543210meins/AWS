@@ -165,17 +165,18 @@ AWS_AMI=$(aws ec2 describe-images \
 --output 'text')
 
 # Create a key pair
-read -p "Bitte gebe den namen für dein Sicherheits key ein (Bitte mit der endung .pem): " SKP
+read -p "Bitte gebe den namen für dein Sicherheits key ein: " SKP
 aws ec2 create-key-pair \
---key-name DevOpsKeyPair \
+--key-name Test \
 --query 'KeyMaterial' \
---output text > $SKP
+--output text > Test.pem
 
 # Change the permission of the key pair
-chmod 400 $SKP
+chmod 400 $SKP".pem"
 
 
 # Create a bash script to update packages, install git and clone the repo, and run the script
+read -p "Bitte geben deinen Namen ein: " name
 cat <<EOF > install.sh
 #!/bin/bash
 
@@ -189,7 +190,7 @@ sudo yum install git -y
 git clone https://github.com/MKAbuMattar/install-and-setup-wordpress-on-amazon-linux-2.git
 
 # Run the script
-bash install-and-setup-wordpress-on-amazon-linux-2/script.sh mkabumattar 121612 121612 wordpressdb wordpressuser password
+bash install-and-setup-wordpress-on-amazon-linux-2/script.sh $name 121612 121612 wordpressdb wordpressuser password
 EOF
 
 
@@ -197,7 +198,7 @@ EOF
 AWS_EC2_INSTANCE=$(aws ec2 run-instances \
 --image-id $AWS_AMI \
 --instance-type t2.micro \
---key-name DevOpsKeyPair \
+--key-name Test \
 --monitoring "Enabled=false" \
 --security-group-ids $AWS_SECURITY_GROUP \
 --subnet-id $AWS_PUBLIC_SUBNET \
@@ -219,4 +220,4 @@ AWS_PUBLIC_IP=$(aws ec2 describe-instances \
 --output text)
 
 # SSH into the EC2 instance
-ssh -i DevOpsKeyPair.pem ec2-user@$AWS_PUBLIC_IP
+ssh -i Test.pem" ec2-user@$AWS_PUBLIC_IP
