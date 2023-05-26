@@ -10,62 +10,69 @@ So erstellen Sie Private und Public Key
 
     cd
     ls -lah .ssh
-    
-Falls Sie sich mit anderem Server und/oder GitHub/Gitlab verbinden möchten, müssen Sie der Inhalt folgendem Befehl kopieren und in den Authorized Keys Datei (~/.ssh/authorized_keys) einfügen.
-
-cat ~/.ssh/id_rsa.pub
-
-Zusammenfassung:
-    ### ssh Key erstellen
-
-    cd  
-    ssh-keygen
-    
-Eingabetaste x3 
-
-    ls -lah .ssh
 
 ## Git und CodeCommit
 
-[Referenz-1 - Cloud9 in CodeCommit übertragen](https://docs.aws.amazon.com/de_de/codecommit/latest/userguide/setting-up-ide-c9.html)
+### 1. Ordner für die Reposetory erstellen
 
-#### Name und Email Konfigurieren
+#### create a folder for the Reposetory
 
-in das verzeichnis wechseln, dass man konfigurieren möchte
-
-    cd enviorment
-    cd Praktikum
+    mkdir "Foldername"
     
+### 2. Name und Email konfigurieren 
+
+in das verzeichnes des Reposetory wechseln
+
+    cd path/"Foldername"
+
+#### configuration name and email 
+
 Befehl für die Konfiguration
 
     git config --global user.name "Mike Berndt" && git config --global user.email "Mike-Berndt@xxx.de"
+    
 das sind 2 befehle in einen Kommando, die mit && getrennt werden.
+
+
+[Referenz-1 - Cloud9 in CodeCommit übertragen](https://docs.aws.amazon.com/de_de/codecommit/latest/userguide/setting-up-ide-c9.html)
+
 
 [Referenz - 2 - Erste mit Git und und AWS CodeCommit ](https://docs.aws.amazon.com/codecommit/latest/userguide/getting-started.html)
 
-#### erstellen eines CodeCommit Reposetory Praktikum
+### 3.  Mit CodeCommit verbinden
 
-[aws-CodeCommit](https://console.aws.amazon.com/codesuite/codecommit/home)
+erstellen eines CodeCommit Reposetory Praktikum
 
-Clonen des Reposetory
+#### conection with CodeCommit
+
+     [aws-CodeCommit](https://console.aws.amazon.com/codesuite/codecommit/home)
+
+#### Clonen des Reposetory
 
     git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/Praktikum-Berndt-Mike
 
+### 4. Führen Sie am Terminal die folgenden Befehle zum Konfigurieren des Hilfsprogramms für AWS CLI-Anmeldeinformationen für HTTPS-Verbindungen aus:
 
-Führen Sie am Terminal die folgenden Befehle zum Konfigurieren des Hilfsprogramms für AWS CLI-Anmeldeinformationen für HTTPS-Verbindungen aus:
+##### configuration the helpprogramm for AWS CLI-loginiformation for https-connection
 
     git config --global credential.helper '!aws codecommit credential-helper $@'
     git config --global credential.UseHttpPath true
     
-    
-Datein in Reposetory hinzufügen 
+### 5. Datein in Reposetory hinzufügen 
 
-    git add Dateiname (README.md)
+#### add files for the Reposetory
+
+    git add Dateiname -A or git add "Dateiname "(README.md)
     
-Commit setzen
-    git commit -m "KOmmentar"
+#### add or Create File 
+
+    git add -a or git add "Filename"gen
+
+#### create or add a commit 
+
+    git commit -m "commmit"
     
-Hochladen des lokalen Reposetory in das Online Reposetory
+#### Upload Files
 
     git push
 
@@ -73,23 +80,66 @@ Log datei für die Commits anzeigen lassen
 
     git log
     
-#### Github Verbindungen
+##Github Verbindungen
+[Referenz - 2 - Erste mit Git und und AWS CodeCommit ](https://docs.aws.amazon.com/codecommit/latest/userguide/getting-started.html)
 
-Git und Github
+### 1. Reposetory Order erstellen
 
-    cd 
-    cd environment/Praktikum
-    git config --global user.name "Mike Berndt  "
-    git config --global user.email "Mike-berndt@xxx.de"
+#### create a reposetory folder
+
+    mkdir "Foldername"
+
+### 2. Name und Email Konfiguration 
+
+#### config a folder for reposetory
+
+    git config --global user.name "name" && git config --global user.email "email"
     git init
+
+### 3. Reposetory auf git hub erstellen
+
+    Github.com ==> Reposetory ==> New
+
+### 4. SSH Key erstellen und hinzufügen
+
+#### create a SSH key
+
+    ins root verzeichnis wechselen
+    ssh-keygen
+    3x Enter drüclen
+
+### 5. Inhalt von der zuvor erstellten ~/.ssh/id_rsa.pub datei in die datei ~/.ssh/authorized_keys kopieren
+
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+
     
-#### SSH PublicKey in Github Profil hinzufügen, danach Repo erstellenund SSH-URL Kopieren
+
+### 6. Mit Git hub verbinden
+
+#### conection with github
 
     ssh -T git@github.com
-    git remote add origin "SSH-URL"
+    git remote add origin "SSH-URL"     <== Reposetory auswählen => code => ssh
     git push -u origin master
 
- sich per ssh over Powershell einloggen
+### 7. Datein auf GitHub hochladen 
+
+#### add or Create File 
+
+    git add -a or git add "Filename"gen
+
+#### create or add a commit 
+
+    git commit -m "commmit"
+    
+#### Upload Files
+
+    git push
+
+
+
+ ## Sich per ssh over Powershell einloggen
 
 [ssh-powershell](https://4sysops.com/archives/powershell-remoting-with-ssh-public-key-authentication/)
 
