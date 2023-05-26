@@ -629,3 +629,13 @@ Wichtig!!! Beim einbinden des Scripts bitte beachten welche Linux Distribution m
 #### Zum Testen, ob nichts schief gelaufen ist, öffnen des Browser auf dem Hostrechner und geben folgende URL ein. öffentliche Ip der EC2-Instanz/wordpress/wp-admin/install.php
 
 ### [Schritt für Schritt Anleitung - zum Nachlesen](https://dev.to/mkabumattar/how-to-create-an-aws-ec2-instance-using-aws-cli-32ek)
+
+1. Sicherheitsgruppe von cloud9 Frankfurt ipv4 http hinzufügen 0.0.0.0/0
+2. docker run --name some-wordpress -p 8080:80 -d wordpress
+3. 
+
+
+## Flask App erstellen
+
+[Turorial](https://www.youtube.com/watch?v=0irsbYywM_U)
+[Anleitung](https://code.tutsplus.com/de/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972)
